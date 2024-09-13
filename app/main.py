@@ -25,7 +25,7 @@ class LoginUser(BaseModel):
     password: str
 
 
-app.get("/")
+@app.get("/")
 def hellyeah():
     return {"messge":"hello"}
 
