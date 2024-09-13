@@ -1,4 +1,5 @@
 fastapi
-uvicorn[standard]
-python-multipart  # For handling form data uploads
-pydantic  # Data validation for FastAPI
+uvicorn
+pydantic
+firebase-admin
+bcrpyt
