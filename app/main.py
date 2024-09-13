@@ -25,6 +25,10 @@ class LoginUser(BaseModel):
     password: str
 
 
+app.get("/")
+def hellyeah():
+    return {"messge":"hello"}
+
 @app.post("/register")
 async def register(user: RegisterUser):
     # Check if username or email already exists
