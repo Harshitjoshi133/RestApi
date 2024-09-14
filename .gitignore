@@ -1,2 +1,3 @@
 venv/
 firebase-service-account.json
+__pychache__/

@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-# from models.user_model import User
+from .models.user_model import User
 
 
 # Initialize Firebase Admin SDK
@@ -24,10 +24,6 @@ class LoginUser(BaseModel):
     username: str
     password: str
 
-
-@app.get("/")
-def hellyeah():
-    return {"messge":"hello"}
 
 @app.post("/register")
 async def register(user: RegisterUser):
