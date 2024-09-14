@@ -2,12 +2,14 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from .models.user_model import User
-
-
+from app.models.user_model import User
+import os
+firebase_creds = os.getenv("ServiceKey")
 # Initialize Firebase Admin SDK
-cred = credentials.Certificate(r"C:\Users\Harshit Joshi\RestApi\firebase-service-account.json")
-# firebase_admin.initialize_app(cred)
+if firebase_creds is None:
+    print("Problem")
+
+cred = credentials.Certificate(firebase_creds)
 
 # Firestore database
 db = firestore.client()

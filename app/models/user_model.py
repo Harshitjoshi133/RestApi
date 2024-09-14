@@ -1,14 +1,8 @@
 import bcrypt
 import firebase_admin
 from firebase_admin import firestore,credentials
-
-# Initialize Firebase Admin SDK
-cred = credentials.Certificate(r"C:\Users\Harshit Joshi\RestApi\firebase-service-account.json")
-firebase_admin.initialize_app(cred)
-
-# Firestore database
-db = firestore.client()
-
+import os
+from app.firebase.firebase import db
 users_collection = db.collection('users')  # Firestore collection for users
 
 class User:
