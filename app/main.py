@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from app.models.user_model import User
+from .models.user_model import User
 import os
 firebase_creds = os.getenv("ServiceKey")
 # Initialize Firebase Admin SDK
